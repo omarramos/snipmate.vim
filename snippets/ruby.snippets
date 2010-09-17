@@ -9,6 +9,8 @@ snippet =b
 	=end
 snippet y
 	:yields: ${1:arguments}
+snippet y?
+	yield ${1} if block_given?
 snippet rb
 	#!/usr/bin/env ruby -wKU
 snippet beg
@@ -16,7 +18,10 @@ snippet beg
 		${3}
 	rescue ${1:Exception} => ${2:e}
 	end
-
+snippet fo
+	File.open('${1:file_name}', '${2:w+}') do |f|
+		f.${3}
+	end
 snippet req
 	require "${1}"${2}
 snippet #
@@ -501,4 +506,22 @@ snippet tas
 	desc "${1:Task description\}"
 	task :${2:task_name => [:dependent, :tasks]} do
 		${3}
+	end
+
+#rspec
+snippet ctx
+	context "${1:context}" do
+		${2}
+	end
+snippet desc
+	describe "${1:description}" do
+		${2}
+	end
+snippet bea
+	before :each do
+		${1}
+	end
+snippet it
+	it 'should ${1:do_somethign}' do
+		${2}
 	end
