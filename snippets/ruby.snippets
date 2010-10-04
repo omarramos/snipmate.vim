@@ -508,8 +508,9 @@ snippet tas
 		${3}
 	end
 
-#rspec
-snippet ctx
+# RSpec
+#==========================
+snippet con
 	context "${1:context}" do
 		${2}
 	end
@@ -521,6 +522,9 @@ snippet bea
 	before :each do
 		${1}
 	end
+snippet it'
+	it 'should ${1:do someting}'
+	${2}
 snippet it
 	it 'should ${1:do_somethign}' do
 		${2}
